@@ -4,6 +4,8 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import api from '../../utils/web-api'
+import localState from '../../utils/local-state'
 
 
 const useStyles = makeStyles(theme => ({
@@ -12,8 +14,15 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Header = (props) => {
+const Header = () => {
   const classes = useStyles()
+
+  const handlelogout = () => {
+    api.logout().then((res) => {
+      localState.clean()
+      window.location.href = '/'
+    })
+  }
   return (
 		<AppBar position="static">
 			<Toolbar>
@@ -22,8 +31,7 @@ const Header = (props) => {
         </Typography>
         <Button 
           color="inherit"
-          // onClick={props.profileActions.logout}
-          >
+          onClick={handlelogout}>
             Logout
           </Button>
 			</Toolbar>
