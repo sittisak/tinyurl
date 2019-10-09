@@ -45,7 +45,7 @@ const CreateTinyurl = (props) => {
 
   const handleSlugChange = (e) => {
     const tinyurl = e.target.value
-      ? `http://localhost:8000/${_slugify(e.target.value)}`
+      ? `http://localhost:8100/${_slugify(e.target.value)}`
       : ''
     setSlug(e.target.value)
     setRinyurl(tinyurl)

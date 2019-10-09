@@ -16,7 +16,7 @@ const config: IConfig = {
   jwtSecret: process.env.JWT_SECRET || 'your-secret-whatever',
   issuer: 'tinyurl',
   databaseUrl: process.env.DATABASE_URL || 'mysql://tinyurl:tinyurl@db.tinyurl:3306/tinyurl',
-  tinyhost:  process.env.TINY_HOST || 'http://localhost:8000',
+  tinyhost:  process.env.TINY_HOST || 'http://localhost:8100',
 }
 
 export default config
