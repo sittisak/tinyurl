@@ -1,0 +1,7 @@
+#!/bin/bash
+
+(set -x;
+  cd ../back-end && npm install)
+(set -x;
+  cd ../web-console && npm install)
+  

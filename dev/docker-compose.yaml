@@ -1,0 +1,52 @@
+version: '3'
+
+networks:
+  tinyurl:
+
+services:
+  nginx:
+    build: ./nginx
+    container_name: nginx.tinyurl
+    ports:
+      - 8000:8000
+    networks:
+      - tinyurl
+  # web-console:
+  #   build: ../web-console
+  #   container_name: web-console.tinyurl
+  #   volumes:
+  #     - ../web-console:/usr/src/app
+  #   depends_on:
+  #     - nginx
+  #     - back-end
+  #   networks:
+  #     - tinyurl
+  back-end:
+    build: ../back-end
+    container_name: back-end.tinyurl
+    command: npm run start:dev
+    environment:
+      NODE_ENV: 'local'
+    volumes:
+      - ../back-end:/usr/src/app
+    depends_on:
+      - db
+      - nginx
+    ports:
+      - 3000:3000
+    networks:
+      - tinyurl
+  db:
+    image: mysql:5
+    container_name: db.tinyurl
+    environment:
+      MYSQL_ROOT_PASSWORD: 'yes'
+      MYSQL_DATABASE: tinyurl
+      MYSQL_USER: tinyurl
+      MYSQL_PASSWORD: tinyurl
+    volumes:
+      - ../data/db:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - tinyurl

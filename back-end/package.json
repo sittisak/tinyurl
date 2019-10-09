@@ -1,0 +1,54 @@
+{
+  "name": "tinyurl",
+  "version": "0.0.1",
+  "description": "tiny url",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "start:dev": "nodemon --exec ts-node ./src/server.ts",
+    "build": "tsc",
+    "command": "ts-node ./src/common/utils/command.ts"
+  },
+  "author": "Mr.Sittisak Churitayo(Bank)",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^15.1.0",
+    "@koa/cors": "^3.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "faker": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.8.2",
+    "koa-body": "^4.1.1",
+    "koa-helmet": "^5.1.0",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.15",
+    "mysql2": "^1.7.0",
+    "rand-token": "^0.4.0",
+    "sequelize": "^5.12.2",
+    "sequelize-cli": "^5.5.1",
+    "shelljs": "^0.8.3",
+    "slugify": "^1.3.5",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.3.2",
+    "@types/koa": "^2.0.50",
+    "@types/node": "^12.6.8",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src/**/*.ts"
+    ],
+    "ext": "ts"
+  }
+}

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+(set -x; docker-compose up -d db )
+
+(set -x; sleep 5)
+
+(set -x;
+  docker-compose run back-end npm run command migrate)
