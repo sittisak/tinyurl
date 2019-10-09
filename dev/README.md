@@ -7,7 +7,7 @@
 
 ### 1. Clone
 ```
-$ git clone https && cd tinyurl/dev
+$ git clone https://github.com/sittisak/tinyurl.git && cd tinyurl/dev
 ```
 
 ### 2. Install all dependencies
@@ -28,7 +28,7 @@ $ git clone https && cd tinyurl/dev
 
 ### 5. Server
 ```
-http://localhost:8000
+http://localhost:8101
 ```
 
 ### 6. Stop server
