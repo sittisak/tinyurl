@@ -33,5 +33,5 @@ http://localhost:8101
 
 ### 6. Stop server
 ```
-~dev/$ docker-compose stop
+~tinyurl/dev$ docker-compose stop
 ```
