@@ -67,7 +67,6 @@ const Login = () => {
 
   const singUp = () => {
     setErrMesSingUp('')
-    setSusMesSingUp('')
     api.signup(usernameSingUp, passwordSingUp).then(res => {
       if (res.err) {
         setErrMesSingUp(res.data)
@@ -75,6 +74,7 @@ const Login = () => {
       }
       setUsernameSingUp('')
       setPasswordSingUp('')
+      setSusMesSingUp(`Successful created user ${usernameSingUp}`)
     })
   }
 
