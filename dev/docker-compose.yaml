@@ -9,18 +9,19 @@ services:
     container_name: nginx.tinyurl
     ports:
       - 8000:8000
+      - 8001:8001
     networks:
       - tinyurl
-  # web-console:
-  #   build: ../web-console
-  #   container_name: web-console.tinyurl
-  #   volumes:
-  #     - ../web-console:/usr/src/app
-  #   depends_on:
-  #     - nginx
-  #     - back-end
-  #   networks:
-  #     - tinyurl
+  web-console:
+    build: ../web-console
+    container_name: web-console.tinyurl
+    volumes:
+      - ../web-console:/usr/src/app
+    depends_on:
+      - nginx
+      - back-end
+    networks:
+      - tinyurl
   back-end:
     build: ../back-end
     container_name: back-end.tinyurl
