@@ -47,6 +47,14 @@ const webAPI = () => {
       const res = await server.get('/api/common/profile')
       return res
     },
+    createTinyurl: async (slug, originalUrl) => {
+      const res = await server.post('/api/tinyurl', { slug, originalUrl })
+      return res
+    },
+    getListTinyurl: async () => {
+      const res = await server.get('/api/tinyurl')
+      return res
+    },
   }
 }
 

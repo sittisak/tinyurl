@@ -1,6 +1,7 @@
 import { Model, DataTypes } from 'sequelize'
 import { Auth } from '../common/models'
 import sequelize from '../common/utils/connection'
+import conf from '../config'
 
 
 class Tinyurl extends Model {
@@ -21,6 +22,15 @@ class Tinyurl extends Model {
     }
     const slug = await checkExistSlug(slugInput)
     return slug
+  }
+
+  getTinyurlInfo() {
+    return {
+      slug: this.slug,
+      originalUrl: this.originalUrl,
+      createdAt: this.createdAt,
+      redirectUrl: `${conf.tinyhost}/${this.slug}`,
+    }
   }
 }
 Tinyurl.init({

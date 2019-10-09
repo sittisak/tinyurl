@@ -33,7 +33,7 @@ export class Controller {
       where: { auth: ctx.state.username },
       order: [['createdAt', 'DESC']],
     })
-    ctx.body = tinyurlList
+    ctx.body = tinyurlList.map(tinyurl => tinyurl.getTinyurlInfo())
     return next()
   }
 
