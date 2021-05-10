@@ -22,7 +22,7 @@
     "koa-body": "^4.1.1",
     "koa-helmet": "^5.1.0",
     "koa-router": "^7.4.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mysql2": "^1.7.0",
     "rand-token": "^0.4.0",
     "sequelize": "^5.12.2",
